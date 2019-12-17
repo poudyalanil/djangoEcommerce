@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS -->
+        {% load static %}
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="{% static 'shop/style.css' %}" />
+
+        <title>djangoEcommerce</title>
+        <style>
+            header {
+                position: relative;
+                background-color: black;
+                height: 75vh;
+                min-height: 25rem;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            header video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                z-index: 0;
+                -ms-transform: translateX(-50%) translateY(-50%);
+                -moz-transform: translateX(-50%) translateY(-50%);
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            header .container {
+                position: relative;
+                z-index: 2;
+            }
+
+            header .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: black;
+                opacity: 0.5;
+                z-index: 1;
+            }
+            #active {
+                color: #40a798;
+            }
+            @import url("https://fonts.googleapis.com/css?family=Fredoka+One&display=swap");
+            @import url("https://fonts.googleapis.com/css?family=Courgette&display=swap");
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                grid-gap: 20px;
+                align-items: stretch;
+                border-radius: 5px;
+            }
+
+            .grid > article {
+                border: 1px solid #ccc;
+                box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+            }
+
+            .grid > article img {
+                max-width: 100%;
+            }
+
+            .grid .text {
+                padding: 20px;
+                text-align: center;
+            }
+
+            .grid .text h3 {
+                font-size: 1.4rem;
+                font-family: "Fredoka One", cursive;
+            }
+
+            .grid .text p {
+                font-size: 0.9rem;
+            }
+
+            .grid .text p a {
+                text-decoration: none;
+                font-weight: bold;
+                color: #555;
+                font-family: "Courgette", cursive;
+            }
+
+            @media (pointer: coarse) and (hover: none) {
+                header {
+                    background: url("https://source.unsplash.com/XT5OInaElMw/1600x900")
+                        black no-repeat center center scroll;
+                }
+                header video {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <div
+                        style="
+                        background-color: #40a798;
+                        width: 250px;
+                        height: 35px;
+                        text-align: center;
+                        border-radius: 20px;
+                        "
+                    >
+                        Django Ecommerce
+                    </div>
+                    <!-- <img src="{% static '/shop/logo.png' %}" alt="" /> -->
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a id="active" class="nav-link" href="#"
+                                >Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- header-->
+        <header>
+            <div class="overlay"></div>
+            <video
+                playsinline="playsinline"
+                autoplay="autoplay"
+                muted="muted"
+                loop="loop"
+            >
+                <source
+                    src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
+                    type="video/mp4"
+                />
+            </video>
+            <div class="container h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                    <div class="w-100 text-white">
+                        <h1 class="display-3">Django Ecommerce</h1>
+                        <p class="lead mb-0">
+                            Commerce ?? Try Django ;)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- content -->
+
+        <div style="margin-top: 20px; margin-bottom: 20px;" class="container">
+            <main class="grid">
+                <article>
+                    <img
+                        src="https://i1.wp.com/nepshirts.com/wp-content/uploads/2019/08/51528BDE-B0C8-4849-952F-C43220E1B563.jpeg?fit=2048%2C2048&ssl=1"
+                        alt="tshirt photo"
+                    />
+                    <div class="text">
+                        <h3>Code</h3>
+                        <p></p>
+                        <p>
+                            Love to code?? Get this one
+                        </p>
+                        <a
+                            href="https://teespring.com/fr/police-unit-k-9?cid=2759&page=1&pid=46&tsmac=store&tsmic=dog-lover-graphic-design"
+                            class="btn btn-primary btn-block"
+                            >Add to cart</a
+                        >
+                    </div>
+                </article>
+                <article>
+                    <img
+                        src="https://i2.wp.com/nepshirts.com/wp-content/uploads/2019/08/AF365BA9-82C9-432F-9AD6-37B5690BD2A1.jpeg?fit=2048%2C2048&ssl=1"
+                        alt="tshirt photo"
+                    />
+                    <div class="text">
+                        <h3>Binary</h3>
+
+                        <p>
+                            Binary my first language? Find that this code on
+                            tshirt says and get 10% off
+                        </p>
+                        <a
+                            href="https://teespring.com/fr/new-if-you-call-one-dog-you-in?cid=2753&page=1&pid=46&sid=front&tsmac=store&tsmic=dog-lover-graphic-design"
+                            class="btn btn-primary btn-block"
+                            >Add to cart</a
+                        >
+                    </div>
+                </article>
+                <article>
+                    <img
+                        src="https://i0.wp.com/nepshirts.com/wp-content/uploads/2019/08/BA01F764-D6A6-427F-A985-60D54AD52C26.jpeg?resize=600%2C600&ssl=1"
+                        alt="tshirt photo"
+                    />
+                    <div class="text">
+                        <h3>No Comments</h3>
+
+                        <p>
+                            Yo please!!
+                        </p>
+                        <a
+                            href="https://teespring.com/fr/husky-2945?cid=2752&page=1&pid=46&tsmac=store&tsmic=dog-lover-graphic-design"
+                            class="btn btn-primary btn-block"
+                            >Add to cart</a
+                        >
+                    </div>
+                </article>
+            </main>
+        </div>
+
+        <!-- footer -->
+        <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+            <div class="container text-center">
+                <small>Copyright &copy; Your Website</small>
+            </div>
+        </footer>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
